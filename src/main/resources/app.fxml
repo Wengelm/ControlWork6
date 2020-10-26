@@ -13,15 +13,15 @@
 
 <AnchorPane prefHeight="750.0" prefWidth="988.0" xmlns="http://javafx.com/javafx/8.0.241" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controlwork.Controller.AppController">
    <children>
-      <Button layoutX="897.0" layoutY="14.0" mnemonicParsing="false" text="Добавить" />
-      <Button layoutX="349.0" layoutY="152.0" mnemonicParsing="false" text="Обновить" />
-      <Button layoutX="446.0" layoutY="152.0" mnemonicParsing="false" text="Удалить" />
-      <TextField layoutX="224.0" layoutY="14.0" />
-      <TextField layoutX="391.0" layoutY="14.0" />
-      <TextField layoutX="562.0" layoutY="14.0" />
-      <TextField layoutX="731.0" layoutY="14.0" />
+      <Button layoutX="894.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleNewCotunry" text="Добавить" />
+      <Button layoutX="349.0" layoutY="152.0" mnemonicParsing="false" onAction="#handleEditCountry" text="Редактировать" />
+      <Button fx:id="delete" layoutX="466.0" layoutY="152.0" mnemonicParsing="false" onAction="#handleDeleteCountry" text="Удалить" />
+      <TextField fx:id="countryTX" layoutX="224.0" layoutY="14.0" />
+      <TextField fx:id="capitalTX" layoutX="391.0" layoutY="14.0" />
+      <TextField fx:id="areaTX" layoutX="562.0" layoutY="14.0" />
+      <TextField fx:id="populationTX" layoutX="731.0" layoutY="14.0" />
 
-      <TableView fx:id="countries" layoutX="35.0" layoutY="263.0" prefHeight="374.0" prefWidth="921.0">
+      <TableView fx:id="countries" editable="true" layoutX="33.0" layoutY="188.0" prefHeight="449.0" prefWidth="923.0">
         <columns>
           <TableColumn fx:id="continent" prefWidth="222.0" text="Континент" />
           <TableColumn fx:id="country" minWidth="0.0" prefWidth="214.0" text="Страна" />
@@ -71,7 +71,7 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-       <ChoiceBox fx:id="continentChoise" layoutX="37.0" layoutY="14.0" prefWidth="150.0" value="5 minutes">
+       <ChoiceBox fx:id="continentChoise" layoutX="37.0" layoutY="14.0" prefWidth="150.0" value="Выберите">
            <items>
                <FXCollections fx:factory="observableArrayList">
                    <String fx:value="Африка" />

@@ -2,18 +2,19 @@ package com.controlwork;
 
 import com.controlwork.Model.Country;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class App extends Application {
 
 
-
+      private static Stage primaryStage;
 
 
 
@@ -41,6 +42,9 @@ public class App extends Application {
 
 
     }
+
+
+
 
 
 }

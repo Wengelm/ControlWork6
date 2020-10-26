@@ -84,4 +84,15 @@ public class Country {
     public void setContinent(String continent) {
         this.continent.set(continent);
     }
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "countryName=" + countryName +
+                ", capitalName=" + capitalName +
+                ", area=" + area +
+                ", population=" + population +
+                ", continent=" + continent +
+                '}';
+    }
 }
