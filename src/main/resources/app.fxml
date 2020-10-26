@@ -1,29 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="750.0" prefWidth="988.0" xmlns="http://javafx.com/javafx/8.0.241" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AppController">
+<AnchorPane prefHeight="750.0" prefWidth="988.0" xmlns="http://javafx.com/javafx/8.0.241" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controlwork.Controller.AppController">
    <children>
-      <Button layoutX="56.0" layoutY="88.0" mnemonicParsing="false" text="Добавить" />
-      <Button layoutX="148.0" layoutY="88.0" mnemonicParsing="false" text="Обновить" />
-      <Button layoutX="238.0" layoutY="88.0" mnemonicParsing="false" text="Удалить" />
-      <TextField layoutX="56.0" layoutY="40.0" />
-      <TextField layoutX="230.0" layoutY="40.0" />
-      <TextField layoutX="395.0" layoutY="40.0" />
-      <TextField layoutX="563.0" layoutY="40.0" />
-      <TextField layoutX="732.0" layoutY="40.0" />
-      <TableView fx:id="tablecountries" layoutX="34.0" layoutY="153.0" prefHeight="374.0" prefWidth="921.0">
+      <Button layoutX="897.0" layoutY="14.0" mnemonicParsing="false" text="Добавить" />
+      <Button layoutX="349.0" layoutY="152.0" mnemonicParsing="false" text="Обновить" />
+      <Button layoutX="446.0" layoutY="152.0" mnemonicParsing="false" text="Удалить" />
+      <TextField layoutX="224.0" layoutY="14.0" />
+      <TextField layoutX="391.0" layoutY="14.0" />
+      <TextField layoutX="562.0" layoutY="14.0" />
+      <TextField layoutX="731.0" layoutY="14.0" />
+
+      <TableView fx:id="countries" layoutX="35.0" layoutY="263.0" prefHeight="374.0" prefWidth="921.0">
         <columns>
           <TableColumn fx:id="continent" prefWidth="222.0" text="Континент" />
-          <TableColumn fx:id="countris" minWidth="0.0" prefWidth="214.0" text="Страна" />
-            <TableColumn prefWidth="225.0" text="Столица" />
-            <TableColumn prefWidth="134.0" text="Население" />
-            <TableColumn prefWidth="125.0" text="Площадь" />
+          <TableColumn fx:id="country" minWidth="0.0" prefWidth="214.0" text="Страна" />
+            <TableColumn fx:id="capital" prefWidth="225.0" text="Столица" />
+            <TableColumn fx:id="population" prefWidth="134.0" text="Население" />
+            <TableColumn fx:id="area" prefWidth="125.0" text="Площадь" />
         </columns>
       </TableView>
+
+      <Label layoutX="68.0" layoutY="50.0" prefHeight="27.0" prefWidth="103.0" text="Континент">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="254.0" layoutY="50.0" text="Страна">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="426.0" layoutY="50.0" text="Столица">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="570.0" layoutY="50.0" text="Площадь , кв. м.">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="731.0" layoutY="50.0" text="Население, тыс. ч.">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="continentLabel" layoutX="68.0" layoutY="99.0" text="Кн">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="countryLabel" layoutX="254.0" layoutY="99.0" text="Стр">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="capitalLabel" layoutX="420.0" layoutY="99.0" text="Ст">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="areLabel" layoutX="629.0" layoutY="99.0" text="Пл">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="populationLabel" layoutX="794.0" layoutY="99.0" text="Поп">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+       <ChoiceBox fx:id="continentChoise" layoutX="37.0" layoutY="14.0" prefWidth="150.0" value="5 minutes">
+           <items>
+               <FXCollections fx:factory="observableArrayList">
+                   <String fx:value="Африка" />
+                   <String fx:value="Южная Америка" />
+                   <String fx:value="Северная Америка" />
+                   <String fx:value="Австралия" />
+                   <String fx:value="Антарктида" />
+                   <String fx:value="Евразия" />
+               </FXCollections>
+           </items>
+       </ChoiceBox>
    </children>
 </AnchorPane>
