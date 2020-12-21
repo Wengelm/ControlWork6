@@ -139,10 +139,7 @@ public class AppController implements Initializable {
             countryData.add(new Country(countryTX.getText(), capitalTX.getText(), Integer.parseInt(areaTX.getText()), Integer.parseInt(populationTX.getText()), (String) continentChoise.getValue()));
             System.out.println(country);
             countryData.add(country);
-
-
-
-        }
+       }
     }
 
 }
