@@ -82,7 +82,7 @@
                </FXCollections>
            </items>
        </ChoiceBox>
-      <TextField layoutX="332.0" layoutY="154.0" prefHeight="25.0" prefWidth="212.0" />
+      <TextField fx:id="filter" layoutX="332.0" layoutY="154.0" prefHeight="25.0" prefWidth="212.0" />
       <Label layoutX="43.0" layoutY="153.0" prefHeight="27.0" prefWidth="289.0" text="Поиск по континенту или стране">
          <font>
             <Font size="18.0" />

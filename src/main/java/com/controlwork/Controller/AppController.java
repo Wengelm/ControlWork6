@@ -4,6 +4,9 @@ import com.controlwork.App;
 import com.controlwork.Model.Country;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -51,9 +54,12 @@ public class AppController implements Initializable {
     TextField areaTX;
     @FXML
     TextField populationTX;
+    @FXML
+    TextField filter;
 
 
     private ObservableList<Country> countryData = FXCollections.observableArrayList();
+    private FilteredList<Country> filteredData;
     private Comparator<Country> countryComparator = Comparator.comparing(Country::getContinent);
 
 
@@ -84,7 +90,21 @@ public class AppController implements Initializable {
         countries.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showDetailsCountry(newValue));
 
+       filter.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+
+                filteredData.clear();
+                for (Country c: countryData)
+                    if (c.getContinent().contains(filter.getText()))
+                        filteredData.add(c);
+
+                countries.setItems(filteredData);
+            }
+        });
+
+
     }
+
 
     private void showDetailsCountry(Country country) {
         if (country != null) {
@@ -141,5 +161,7 @@ public class AppController implements Initializable {
             countryData.add(country);
        }
     }
+
+
 
 }
